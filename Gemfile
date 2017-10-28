@@ -36,8 +36,10 @@ gem 'devise'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.11'
-gem "paperclip", "~> 5.0.0"
+gem 'bcrypt'
+gem 'has_friendship'
+
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

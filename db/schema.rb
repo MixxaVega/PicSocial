@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171027210426) do
+ActiveRecord::Schema.define(version: 20171028182144) do
+
+  create_table "friendships", force: :cascade do |t|
+    t.string "friendable_type"
+    t.integer "friendable_id"
+    t.integer "friend_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer "blocker_id"
+    t.integer "status"
+  end
 
   create_table "pics", force: :cascade do |t|
     t.string "title"
@@ -18,9 +28,9 @@ ActiveRecord::Schema.define(version: 20171027210426) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-  #-  t.index ["user_id"], name: "index_pics_on_user_id"
+    t.index ["user_id"], name: "index_pics_on_user_id"
   end
-  add_index "pics", ["user_id"], name: "index_pics_on_user_id"
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
