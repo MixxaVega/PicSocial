@@ -1,35 +1,39 @@
-!!! 5
 %html
 %head
-	%title PicSocial
-	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-	= javascript_include_tag 'application', 'data-turbolinks-track' => true
-	= csrf_meta_tags
+  %title PicSocial
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+  = javascript_include_tag 'application'
+  = csrf_meta_tags
 
 %body
-	%nav.navbar.navbar-inverse
-		.container
-			.navbar-brand 
-				= link_to "PicSocial", root_path
+  %nav.navbar.navbar-inverse
+    .container
+      .navbar-brand 
+        = link_to "PicSocial", root_path
 
-			-if user_signed_in?
-				%ul.nav.navbar-nav.navbar-left
-					%li 
-						= link_to "Agrega Pic", new_pic_path
-					%li 
-						= link_to "Configuración", edit_user_registration_path
-					%li 
-						= link_to "Salir", destroy_user_session_path, method: :delete
+      -if user_signed_in?
+        %ul.nav.navbar-nav.navbar-left
+          %li 
+            = link_to "Agrega Pic", new_pic_path
+          %li 
+            = link_to "Configuración", edit_user_registration_path
+          %li 
+            = link_to "Salir", destroy_user_session_path, method: :delete
+          %li
+            = link_to current_user.email, "#profile"
+          %li
+            = link_to "#profile", class: 'avatar-container' do
+              .avatar{ style: "background-image: url(#{current_user.avatar(:original)})" }
 
-			-else
-				%ul.nav.navbar-nav.navbar-left
-					%li 
-						= link_to "Unirse", new_user_registration_path
-					%li 
-						= link_to "Iniciar sesión", new_user_session_path
+      -else
+        %ul.nav.navbar-nav.navbar-left
+          %li 
+            = link_to "Unirse", new_user_registration_path
+          %li 
+            = link_to "Iniciar sesión", new_user_session_path
 
-	.container
-		-flash.each do |name, msg|
-			=content_tag :div, msg, class: "alert alert-info"
-		
-		=yield
+  .container
+    -flash.each do |name, msg|
+      =content_tag :div, msg, class: "alert alert-info"
+    
+    =yield

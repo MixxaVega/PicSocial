@@ -127,3 +127,18 @@ nav {
 textarea {
 	min-height: 250px;
 }
+
+.avatar-container {
+ 	padding: 4px 0px !important;
+ 	margin: 0;
+}
+.avatar {
+	 background-size: cover;
+	 background-repeat: no-repeat;
+	 background-position: center;
+	 width: 42px;
+	 height: 42px;
+	 border-radius: 50%;
+	 padding: 0;
+	 margin: 0;
+}
