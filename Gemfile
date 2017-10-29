@@ -38,7 +38,9 @@ gem 'devise'
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 gem 'has_friendship'
-
+gem 'paperclip'
+gem 'masonry-rails'
+gem 'acts_as_votable'
 
 
 # Use Capistrano for deployment

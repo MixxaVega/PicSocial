@@ -2,7 +2,7 @@
 %p= @pic.description
 %p
 Pic by
-= @pic.user.email
+= link_to @pic.user.email, users_index_path(:user => @pic.user.email)
 
 %br
 

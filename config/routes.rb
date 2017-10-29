@@ -4,4 +4,8 @@ Rails.application.routes.draw do
   resources :pics
   root "pics#index"
 
+  #resources :users
+  #user_profile "users#index"
+  get "users/index"
+
 end

@@ -1,0 +1,6 @@
+%h2
+	=@user
+
+-@picss.each do |pic| 
+	-if pic.user_id == @id
+		%h2= link_to pic.title, pic
