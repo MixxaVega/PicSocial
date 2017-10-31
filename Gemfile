@@ -37,7 +37,7 @@ gem 'devise'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-gem 'bcrypt'
+gem 'bcrypt', platforms: :ruby
 gem 'has_friendship'
 gem 'paperclip', '~> 5.0.0'
 gem 'masonry-rails'
