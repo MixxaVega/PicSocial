@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 		@picss = Pic.all.order("created_at DESC")
 		@userss = User.all
 		@userss.each do |user|
-			if user.email == @user 
+			if user.username == @user 
 				@id= user.id
 			end
 		end

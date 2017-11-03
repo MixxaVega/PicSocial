@@ -2,10 +2,10 @@
 %p= @pic.description
 %p
 Pic by
-= link_to @pic.user.email, users_index_path(:user => @pic.user.email)
+= link_to @pic.user.username, users_index_path(:user => @pic.user.username)
 
 %br
 
-=link_to "Back", root_path
-=link_to "Edit", edit_pic_path
-=link_to "Delete", pic_path, method: :delete, data: { confirm: "Estás seguro?"}
+=link_to "Atrás", root_path
+=link_to "Editar", edit_pic_path
+=link_to "Eliminar", pic_path, method: :delete, data: { confirm: "Estás seguro?"}

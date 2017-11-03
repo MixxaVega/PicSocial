@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20171103074715_add_user_name2_to_users.rb

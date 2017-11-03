@@ -17,13 +17,16 @@
             = link_to "Agrega Pic", new_pic_path
           %li 
             = link_to "Configuración", edit_user_registration_path
+          
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            = link_to current_user.username, users_index_path(:user => current_user.username)
+          %li
+            = link_to users_index_path(:user => current_user.username), class: 'avatar-container' do
+              .avatar{ style: "background-image: url(#{current_user.avatar(:original)})" }
           %li 
             = link_to "Salir", destroy_user_session_path, method: :delete
-          %li
-            = link_to current_user.email, users_index_path
-          %li
-            = link_to "#profile", class: 'avatar-container' do
-              .avatar{ style: "background-image: url(#{current_user.avatar(:original)})" }
+          
 
       -else
         %ul.nav.navbar-nav.navbar-left
