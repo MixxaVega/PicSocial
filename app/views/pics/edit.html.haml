@@ -3,6 +3,9 @@
 		.panel.panel-default
 			%h1 Editar pic
 		.panel-body
+			.current_image
+				%strong.center Actual
+				= image_tag @pic.image.url
 			= render 'form'
 
 	=link_to "Cancelar", pic_path
