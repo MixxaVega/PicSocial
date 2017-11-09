@@ -1,11 +1,13 @@
-#edit_page.col-md-8.col-md-offset-2
-	.row
+#pic_show.row
+	.col-md-6.col-md-offset-3
 		.panel.panel-default
 			%h1 Editar pic
-		.panel-body
-			.current_image
-				%strong.center Actual
+			.panel.heading.pic_image
+				%strong.center 
+					%br &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Actual
 				= image_tag @pic.image.url
-			= render 'form'
+			.panel-body
+					
+				= render 'form'
 
-	=link_to "Cancelar", pic_path
+				=link_to "Cancelar", pic_path
