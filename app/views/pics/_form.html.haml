@@ -9,10 +9,17 @@
 					%li = msg
 
 	.form-group
-		=f.input :image, label: "Imagen", input_html: {class: 'form-control'}
+		=image_tag "", id: "pic_preview", width: '50%'
+		=f.input :image, label: "Imagen", input_html: {class: 'form-control'}, required: true
 	.form-group
-		=f.input :title, label: "Título", input_html: {class: 'form-control'}
+		=f.input :title, label: "Título", input_html: {class: 'form-control'}, required: true
 	.form-group
 		=f.input :description, label:"Descripción", input_html: {class: 'form-control'}
 
-	=f.button :submit, "Crear",class: "btn btn-info"
+	=f.button :submit, "Aceptar",class: "btn btn-info"
+
+	:javascript
+		$('#pic_image').change( function(event) {
+			var tmppath = URL.createObjectURL(event.target.files[0]);
+			$('#pic_preview').attr('src', tmppath);
+		});

@@ -10,4 +10,5 @@ class User < ApplicationRecord
 
 	validates :username, presence: { message: "No puede estar vacío."}, length: {minimum: 4, maximum: 35, message: "Inválido"}
 	validates :username, uniqueness: true
+	validates_format_of :username, :with => /\A[a-zA-Z]+[áÁéÉíÍóÓúÚñÑ]+([a-zA-Z]|\d)*\Z/
 end
