@@ -1,0 +1,8 @@
+// id del pic que se modifico
+var picId = "<%= @pic.id %>";
+var upvotesCount = "<%= @pic.get_upvotes.size %>";
+var downvotesCount = "<%= @pic.get_downvotes.size %>";
+var isUpVoter = <%= @user_is_up_voter %>;
+var isDownVoter = <%= @user_is_down_voter %>;
+
+updateHandLink(isUpVoter, isDownVoter, picId, upvotesCount, downvotesCount);

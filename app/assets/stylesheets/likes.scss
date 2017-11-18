@@ -1,0 +1,10 @@
+a.like-link.like-link-active,
+a.dislike-link.dislike-link-active {
+	transition: all .2s ease-out;
+}
+a.like-link.link-active {
+	background-color: #58ACFA;
+}
+a.dislike-link.link-active {
+	background-color: #FA5858;
+}
