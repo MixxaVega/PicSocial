@@ -28,3 +28,9 @@
 								-if current_user.username==@pic.user.username
 									=link_to "Editar", edit_pic_path, class: "btn btn-info"
 									=link_to "Eliminar", pic_path, method: :delete, data: { confirm: "Estás seguro?"}, class: "btn btn-danger"
+					.col.md-6
+						%h2
+							= @pic.comments.count
+							Comentarios
+						= render @pic.comments
+						= render "comments/form"

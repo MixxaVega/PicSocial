@@ -1,0 +1,8 @@
+= form_for([@pic, @pic.comments.build]) do |f|
+  .form-group
+    = f.label "Comentario"
+    %br
+    = f.text_area :body
+  %br
+  %p
+    =f.submit "Aceptar",class: "btn btn-info"

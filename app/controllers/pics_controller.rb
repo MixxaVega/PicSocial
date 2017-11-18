@@ -17,7 +17,7 @@ class PicsController < ApplicationController
 		@pic = current_user.pics.build(pic_params)
 
 		if @pic.save
-			redirect_to @pic, notice: "Yess! It was posted!"
+			redirect_to @pic, notice: "Publicado!"
 		else
 			render 'new'
 		end

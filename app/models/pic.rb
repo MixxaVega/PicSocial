@@ -1,4 +1,5 @@
 class Pic < ApplicationRecord
+	has_many :comments
 	acts_as_votable
 	belongs_to :user
 

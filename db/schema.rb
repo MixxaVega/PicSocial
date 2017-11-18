@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171107003221) do
+ActiveRecord::Schema.define(version: 20171118042708) do
+
+  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text "body"
+    t.bigint "pic_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["pic_id"], name: "index_comments_on_pic_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
 
   create_table "friendships", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "friendable_type"
@@ -72,4 +82,6 @@ ActiveRecord::Schema.define(version: 20171107003221) do
     t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
   end
 
+  add_foreign_key "comments", "pics"
+  add_foreign_key "comments", "users"
 end
