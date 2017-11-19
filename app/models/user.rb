@@ -10,6 +10,6 @@ class User < ApplicationRecord
 	validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
 	validates :username, presence: { message: "No puede estar vacío."}, length: {minimum: 4, maximum: 35, message: "Inválido"}
-	validates :username, uniqueness: true
-	validates_format_of :username, :with => /\A[a-zA-Z]+[áÁéÉíÍóÓúÚñÑ]+([a-zA-Z]|\d)*\Z/
+	validates :username, :uniqueness => { :case_sensitive => false }
+	validates_format_of :username, :with => /\A[a-zA-ZáéíóúÁÉÍÓÚÑñ0-9]*\z/
 end

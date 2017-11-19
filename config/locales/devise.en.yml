@@ -54,6 +54,7 @@ en:
       unlocked: "Su cuenta ha sido desbloqueada con éxito. Por favor inicie sesión para continuar."
   errors:
     messages:
+      taken: "Ya existe"
       too_short: "Demasiado corto"
       too_long: "Demasiado largo."
       confirmation: "Las contraseñas deben ser iguales."
