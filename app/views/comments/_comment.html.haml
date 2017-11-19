@@ -1,8 +1,14 @@
 .comment.clearfix
-  .comment_content
-    %p.comment_name
-      %strong= comment.user.username
-    %p.comment_body= comment.body
-    %p.comment_title
-      = time_ago_in_words(comment.created_at)
-      
+	.comment_content
+		%p.comment_name
+			%strong
+				= comment.user.username     
+		%p.comment_body
+			= comment.body
+		%p.comment_title
+			= time_ago_in_words(comment.created_at)
+		%p
+	.col.md-6
+		.btn.pull-right
+			-if current_user.id==comment.user.id
+				= link_to "Eliminar", [comment.pic, comment], method: :delete, class: "btn btn-danger btn-xs", data: {confirm: 'seguro?'}

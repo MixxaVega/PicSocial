@@ -1,5 +1,5 @@
 class Pic < ApplicationRecord
-	has_many :comments
+	has_many :comments, dependent: :destroy
 	acts_as_votable
 	belongs_to :user
 

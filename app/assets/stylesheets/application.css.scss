@@ -21,6 +21,29 @@
 body {
 	background: #E9E9E9;
 }
+.button {
+	outline: none;
+	background: transparent;
+	border: 1.5px solid #FFF;
+	padding: .5em 2.5em;
+	border-radius: 0.5em;
+	&:hover {
+		border: 1px solid #333734;
+		color: #22487b;
+		a {
+			color: #22487b !important;
+		}
+	}
+}
+
+.clearfix:after {
+   content: ".";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 100;
@@ -143,3 +166,33 @@ textarea {
 	 padding: 0;
 	 margin: 0;
 }
+.comment {
+				border-bottom: 1px solid #d6dce0;
+				padding: 1.5em 2em;
+				.clear_both {
+					clear: both;
+				}
+				&:after {
+					clear: both;
+				}
+				.comment_content {
+					float: left;
+					.comment_name {
+						margin: 1em 0 0 0;
+						font-size: 1.0em;
+					}
+					.comment_body {
+						font-size: 1.2em;
+						margin: 0.2em 0 0 0;
+					}
+					.comment_time {
+						margin-top: 1.2em;
+						font-size: .8em;
+					}
+				}
+				
+			}
+textarea {
+        resize: none;
+}
+		
