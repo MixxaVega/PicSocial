@@ -16,13 +16,15 @@
 
 					.col.md-6
 						.btn-group.pull-right
-							= link_to like_pic_path(@pic), method: :put, remote: true, class: "btn btn-default like-link#{@user_is_up_voter ? ' link-active' : ''}" do 
-								%span.glyphicon.glyphicon-thumbs-up
-								%span.count= @pic.get_upvotes.size
+							-if user_signed_in?
+								= link_to like_pic_path(@pic), method: :put, remote: true, class: "btn btn-default like-link#{@user_is_up_voter ? ' link-active' : ''}" do 
+									%span.glyphicon.glyphicon-thumbs-up
+									%span.count= @pic.get_upvotes.size
 
-							= link_to dislike_pic_path(@pic), method: :put, remote: true, class: "btn btn-default dislike-link#{@user_is_down_voter ? ' link-active' : ''}" do 
-								%span.glyphicon.glyphicon-thumbs-down
-								%span.count= @pic.get_downvotes.size
+							-if user_signed_in?
+								= link_to dislike_pic_path(@pic), method: :put, remote: true, class: "btn btn-default dislike-link#{@user_is_down_voter ? ' link-active' : ''}" do 
+									%span.glyphicon.glyphicon-thumbs-down
+									%span.count= @pic.get_downvotes.size
 							%br
 							-if user_signed_in?
 								-if current_user.username==@pic.user.username

@@ -83,12 +83,16 @@ class PicsController < ApplicationController
 	end
 
 	def is_down_voter
-		users_down_voters_ids = @pic.get_downvotes.map{|vote| vote.voter_id }
-		users_down_voters_ids.include? current_user.id
+		if user_signed_in?
+			users_down_voters_ids = @pic.get_downvotes.map{|vote| vote.voter_id }
+			users_down_voters_ids.include? current_user.id
+		end
 	end
 
 	def is_up_voter
-		users_up_voters_ids = @pic.get_upvotes.map{|vote| vote.voter_id }
-		users_up_voters_ids.include? current_user.id
+		if user_signed_in?
+			users_up_voters_ids = @pic.get_upvotes.map{|vote| vote.voter_id }
+			users_up_voters_ids.include? current_user.id
+		end
 	end
 end

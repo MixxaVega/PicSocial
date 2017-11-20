@@ -1,9 +1,10 @@
-= form_for([@pic, @pic.comments.build]) do |f|
-  .form-group
-    %br
-    = f.label "Comentario"
-    %br
-    = f.text_area :body, cols: "81%"
-  %br
-  %p
-    =f.submit "Aceptar",class: "btn btn-info"
+-if user_signed_in?
+	= form_for([@pic, @pic.comments.build]) do |f|
+		.form-group
+		%br
+		= f.label "Comentario"
+		%br
+		= f.text_area :body, cols: "81%"
+	%br
+	%p
+		=f.submit "Aceptar",class: "btn btn-info"
