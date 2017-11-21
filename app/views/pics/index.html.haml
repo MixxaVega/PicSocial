@@ -1,7 +1,7 @@
-.col-md-6.col-md-offset-3
-	#pics.transitions-enabled
+#pics.transitions-enabled
+	%h1 Pics de todos los usuarios
+	.imagenIndex
 		-@pics.each do |pic|
 			.box.panel.panel-default
 				= link_to (image_tag pic.image.url), pic 
-				%h1= link_to pic.title, pic
-
+				.titulo= link_to pic.title, pic

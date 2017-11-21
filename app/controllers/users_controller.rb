@@ -9,5 +9,6 @@ class UsersController < ApplicationController
 				@id= user.id
 			end
 		end
+		@user = User.find(@id)
 	end
 end

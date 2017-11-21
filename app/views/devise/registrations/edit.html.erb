@@ -12,7 +12,7 @@
 
     <%= f.input :username, label: "Nombre de usuario" %>
     <%= f.input :avatar, as: :file %>
-    <%= f.input :password, label: "Contraseña", autocomplete: "off", hint: "Déjalo en blanco si no quieres cambiarla", required: false %>
+    <%= f.input :password, label: "Contraseña", hint: "Déjalo en blanco si no quieres cambiarla", required: false %>
     <%= f.input :password_confirmation, label: "Confirmación de contraseña", required: false %>
     <%= f.input :current_password, label: "Contraseña actual", hint: "Necesitamos su contraseña actual para confirmar los cambios", required: true %>
   </div>

@@ -6,14 +6,11 @@
 			.panel-body
 				%h1= @pic.title
 				%p= @pic.description
-
+				%p.user
+					by
+					= link_to @pic.user.username, users_index_path(:user => @pic.user.username)
 			.panel-footer
 				.row
-					.col-md-6
-						%p.user
-							by
-							= link_to @pic.user.username, users_index_path(:user => @pic.user.username)
-
 					.col.md-6
 						.btn-group.pull-right
 							-if user_signed_in?
@@ -26,13 +23,16 @@
 									%span.glyphicon.glyphicon-thumbs-down
 									%span.count= @pic.get_downvotes.size
 							%br
+						.btn-group.pull-left
 							-if user_signed_in?
 								-if current_user.username==@pic.user.username
 									=link_to "Editar", edit_pic_path, class: "btn btn-info"
 									=link_to "Eliminar", pic_path, method: :delete, data: { confirm: "Estás seguro?"}, class: "btn btn-danger"
-					.col.md-6
-						%h2
+						%br
+						%br
+						%br
+						%h3 
+							Comentarios:
 							= @pic.comments.count
-							Comentarios
 						= render @pic.comments
 						= render "comments/form"

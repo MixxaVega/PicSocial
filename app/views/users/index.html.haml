@@ -1,7 +1,12 @@
 %h2
-	=@user
-
--@picss.each do |pic| 
-	-if pic.user_id == @id
-		%h2= link_to (image_tag pic.image.url), pic 
-		
+	Pics de
+	=@user.username
+	%br
+	= image_tag @user.avatar(:original), class: 'avatarIndex'
+#pics.transitions-enabled
+	.imagenIndex
+		-@picss.each do |pic| 
+			-if pic.user_id == @id
+				.box.panel.panel-default
+					= link_to (image_tag pic.image.url), pic 
+					.titulo= link_to pic.title, pic

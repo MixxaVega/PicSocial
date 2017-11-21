@@ -15,9 +15,11 @@
       -if user_signed_in?
         %ul.nav.navbar-nav.navbar-left
           %li 
-            = link_to "Agrega Pic", new_pic_path
+            = link_to "Agregar pic", new_pic_path
           %li 
             = link_to "Configuración", edit_user_registration_path
+          %li
+            = link_to "Ver mis pics", users_index_path(:user => current_user.username)
           
         %ul.nav.navbar-nav.navbar-right
           %li
