@@ -15,6 +15,7 @@ class PicsController < ApplicationController
 	#- necesita view
 	def new 
 		@pic = current_user.pics.build
+		@option=1
 	end
 
 	def create
@@ -29,6 +30,7 @@ class PicsController < ApplicationController
 
 	#-necesita view
 	def edit
+		@option=2
 	end
 
 	def update
@@ -75,6 +77,7 @@ class PicsController < ApplicationController
 
 	def find_pic
 		@pic = Pic.find(params[:id])
+		@option=0
 	end
 
 	def current_user_is_voter_unvoter

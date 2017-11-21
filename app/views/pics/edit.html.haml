@@ -1,13 +1,9 @@
-#pic_show.row
+.pic_show.row{ id: "pic-show-#{@pic.id}" }
 	.col-md-6.col-md-offset-3
 		.panel.panel-default
-			%h1 Editar pic
 			.panel.heading.pic_image
-				%strong.center 
-					%br &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Actual
+				%h1 Editar pic
 				= image_tag @pic.image.url
 			.panel-body
-					
 				= render 'form'
-
 				=link_to "Cancelar", pic_path

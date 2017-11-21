@@ -11,7 +11,10 @@
 	.form-group
 		%center
 			=image_tag "", id: "pic_preview", width: '50%'
-		=f.input :image, label: "Imagen",  required: true
+		-if @option==1
+			=f.input :image, label: "Imagen",  required: true
+		-if @option==2
+			=f.input :image, label: "Imagen"
 	.form-group
 		=f.input :title, label: "Título", input_html: {class: 'form-control'}, required: true
 	.form-group
