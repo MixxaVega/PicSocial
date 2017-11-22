@@ -1,0 +1,58 @@
+:css
+  #search-container {
+    position: relative;
+  }
+  .list-group-search-options {
+    position: absolute;
+    top: 36px;
+    width: 300px;
+    max-width: 300px;
+    z-index: 2;
+  }
+  .list-group-search-options > * {
+    border-radius: 0 !important;
+    outline: none;
+  }
+  #submit-search {
+    display: none;
+  }
+
+= form_tag search_path, method: "post", id: "search-container", class: "navbar-form navbar-left", remote: true do
+  .form-group
+    =text_field_tag :q, "", id: "search", class: "form-control", placeholder: "Buscar", autocomplete: "off"
+  %button#submit-search.btn.btn-default{ type: "submit" } Buscar
+
+  #search-options.list-group.list-group-search-options
+
+:javascript
+  $(function(){
+    var search = $('#search');
+    var options = $('#search-options');
+    var form = $('#search-container');
+    var submit = $('#submit-search');
+
+    // hide on click
+    $('body').on('click', function () { options.hide(); });
+    $(search).on('input change', function () { submit.click(); });
+
+    window.updateSearch = function (list) {
+
+      // create user link option for user
+      function createItemElement(user) {
+        var link = document.createElement('a');
+        $(link).attr('href', user.url);
+        $(link).html(user.username);
+        $(link).addClass('list-group-item');
+
+        return $(link);
+      }
+
+      // clear options
+      options.html('');
+      // build user options
+      $.each(list, function (i, item) {
+        options.append(createItemElement(item));
+      })
+      options.show();
+    }
+  });

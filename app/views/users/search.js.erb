@@ -1,0 +1,3 @@
+var users = <%= @users.each{|user| user.url = users_index_path(:user => user.username) }.to_json(methods: [:url]).html_safe %>;
+
+updateSearch(users);

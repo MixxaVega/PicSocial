@@ -37,6 +37,7 @@
             = link_to "Unirse", new_user_registration_path
           %li 
             = link_to "Iniciar sesión", new_user_session_path
+      = render "layouts/search_bar"
 
   .container
     -flash.each do |name, msg|

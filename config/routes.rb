@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   	end
     resources :comments
   end
+
+  post "search", to: "users#search"
+  
   root "pics#index"
 
   #resources :users
