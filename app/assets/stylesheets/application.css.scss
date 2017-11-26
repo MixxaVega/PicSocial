@@ -218,7 +218,6 @@ textarea {
         resize: none;
 }		
 .follow-button {
-  text-transform: uppercase;
   border-color: #4090db;
   color: #4090db;
   margin-left: 20px;
@@ -229,7 +228,6 @@ textarea {
 }
 
 .unfollow-button {
-  text-transform: uppercase;
   border-color: #66bd2b;
   background-color: #66bd2b;
   color: white;
@@ -239,4 +237,10 @@ textarea {
     background-color: #47821F;
     color: white;
   }
+}
+#seguidores, #seguidos {
+	font-weight: 100;
+	color: black;
+	font-weight: bold;
+	font-size: 1em;
 }

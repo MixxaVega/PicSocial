@@ -1,5 +1,6 @@
 $('#follow-button').attr('class', 'btn unfollow-button')
-                   .text('Siguiendo')
+                   .text('Dejar de seguir')
                    .attr('href', "/<%= @user.username %>/unfollow_user")
-                   .attr('id', 'unfollow-button');
-$('#seguidores').text("<%=@user.followers.count %>")
+                   .attr('id', 'follow-button');
+$('#seguidores').text("Seguidores <%=@user.followers.count %>")
+$('#seguids').text("Seguidos #{@user.following.count}")

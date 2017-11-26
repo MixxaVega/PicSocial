@@ -16,4 +16,9 @@ class UsersController < ApplicationController
 	def search
 		@users = !params.has_key?(:q) || params[:q].blank? ? [] : User.like(params[:q])
 	end
+
+	def follows
+		@pics = Pic.all.order("created_at DESC")
+		@followings = current_user.following.ids
+	end
 end

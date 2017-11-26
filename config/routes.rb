@@ -23,5 +23,6 @@ Rails.application.routes.draw do
   #resources :users
   #user_profile "users#index"
   get "users/index"
+  get "users/follows"
 
 end

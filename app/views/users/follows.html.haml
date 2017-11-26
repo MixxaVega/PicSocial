@@ -1,0 +1,9 @@
+#pics.transitions-enabled
+	%h1 Pics de usuarios 
+	%br
+	-@pics.each do |pic|
+		-if @followings.include?(pic.user_id)
+			.imagenIndex
+				.box.panel.panel-default
+					= link_to (image_tag pic.image.url), pic 
+					.titulo= link_to pic.title, pic
