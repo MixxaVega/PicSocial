@@ -4,11 +4,11 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :username, required: true, autofocus: true, label: "Nombre de usuario", hint: "De 4 a 35 caracteres" %>
-    <%= f.input :email, required: true, label: "Correo electrónico" %>
-    <%= f.input :password, required: true, label: "Contraseña", hint: ("#{@minimum_password_length} caracteres mínimos" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true, label: "Confirmación de contraseña" %>
-    <%= f.input :avatar, as: :file %>
+    <%= f.input :username, required: true, autofocus: true, label: "Nombre de usuario", hint: "De 4 a 35 caracteres", input_html: {class: 'form-control', autocomplete: "off"} %>
+    <%= f.input :email, required: true, label: "Correo electrónico", input_html: {class: 'form-control', autocomplete: "off"} %>
+    <%= f.input :password, required: true, label: "Contraseña", hint: ("#{@minimum_password_length} caracteres mínimos" if @minimum_password_length), input_html: {class: 'form-control', autocomplete: "off"} %>
+    <%= f.input :password_confirmation, required: true, label: "Confirmación de contraseña", input_html: {class: 'form-control', autocomplete: "off"} %>
+    <%= f.input :avatar, as: :file, required: true %>
   </div>
 
   <div class="form-actions">

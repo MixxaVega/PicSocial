@@ -162,11 +162,6 @@ nav {
 		}
 	}
 }
-
-textarea {
-	min-height: 250px;
-}
-
 .avatar-container {
  	padding: 4px 0px !important;
  	margin: 0;
@@ -216,6 +211,9 @@ textarea {
 			}
 textarea {
         resize: none;
+        width: 100%;
+        padding-right: 10px;
+        min-height: 220px;
 }		
 .follow-button {
   border-color: #4090db;

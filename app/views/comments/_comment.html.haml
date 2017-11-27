@@ -13,4 +13,4 @@
 		.btn.pull-right
 			-if user_signed_in?
 				-if current_user.id==comment.user.id
-					= link_to "Eliminar", [comment.pic, comment], method: :delete, class: "btn btn-danger btn-xs", data: {confirm: 'seguro?'}
+					= link_to "Eliminar", [comment.pic, comment], method: :delete, class: "btn btn-danger btn-xs", data: {confirm: '¿Seguro?'}

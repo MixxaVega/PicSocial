@@ -6,10 +6,11 @@
 		%br
 		= image_tag @user.avatar(:original), class: 'avatarIndex'
 		-if user_signed_in?
-			-if current_user_is_following(current_user.id, @user.id)
-				= link_to "Dejar de seguir", (unfollow_user_path @user.username), remote: true, class: "btn unfollow-button", id: "follow-button", method: :post
-			-else
-				= link_to "Seguir", (follow_user_path @user.username), remote: true, class: "btn follow-button", id: "follow-button", method: :post
+			-if current_user.id != @user.id
+				-if current_user_is_following(current_user.id, @user.id)
+					= link_to "Dejar de seguir", (unfollow_user_path @user.username), remote: true, class: "btn unfollow-button", id: "follow-button", method: :post
+				-else
+					= link_to "Seguir", (follow_user_path @user.username), remote: true, class: "btn follow-button", id: "follow-button", method: :post
 		%br
 		%span#seguidores
 			="Seguidores #{@user.followers.count}"
